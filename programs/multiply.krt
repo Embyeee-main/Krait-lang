@@ -1,0 +1,44 @@
+# Initialization
+PUSH 1
+MOV counter
+
+PUSH 1
+MOV continue
+
+# Getting Input
+INPUT Type a number: 
+MOV num_1
+num_1
+MOV num_1_buf
+INPUT Type a second number: 
+MOV num_2
+
+# Adding
+LABEL adding
+num_1
+num_1_buf
+ADD
+MOV num_1
+
+# Continue
+num_2
+PUSH 1
+SUB
+counter
+EQ
+NOT
+MOV continue
+
+# Counter
+counter
+PUSH 1
+ADD
+MOV counter
+
+# Loop
+continue
+GOTO adding
+
+num_1
+PRINT
+HALT
